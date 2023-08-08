@@ -1,11 +1,11 @@
 .home{
     margin-top: -117px;
-    height: 96vh;
+    height:600px;
     width: 100vw;
     background-image: url('./background.jpg'); /* Replace with your image path */
     background-size: cover;
      background-position: center;
-
+    margin-bottom: 10px;
 }
 .innercont{
     position: relative;
@@ -38,4 +38,18 @@
     padding: 7px 5px 7px 5px;;
     
 
+}
+
+/* footer  */
+.scroll-img{
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: auto;
+    
+
+}
+#result_img{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

@@ -1,0 +1,16 @@
+.display-img{
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: auto;
+}
+#result_img{
+    height: 18rem;
+    width: 20rem;
+    object-fit: cover;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.img-cont{
+
+}
