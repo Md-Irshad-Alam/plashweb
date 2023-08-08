@@ -6,10 +6,11 @@ import {TbScanEye} from 'react-icons/tb';
 function Home() {
     const [img, setImg] = useState("");
     const [res, setRes] = useState([]);
-
+    const Access_Key =  process.env.Uplash_key
+    // console.log(Access_Key)
     const fetchRequest = async () => {
         const data = await fetch(
-          `https://api.unsplash.com/search/photos?page=1&query=${img}&client_id=${Access_Key}`
+          `https://api.unsplash.com/search/photos?page=1&query=${img}&client_id=${'4YV-X_kIDC3sZv-8HnuSpytd9TG-b8jh4wRCVguGvrA'}`
         );
         const dataJ = await data.json();
         const result = dataJ.results;
@@ -35,7 +36,6 @@ function Home() {
         <TbScanEye fontSize={"1.5rem"}/>
      </div>
       </div>
-      
     </div>
   )
 }
