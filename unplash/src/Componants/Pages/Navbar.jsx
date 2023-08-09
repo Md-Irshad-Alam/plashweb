@@ -72,7 +72,8 @@ function HeaderSearch({ inputval }) {
 const [img, setImg] = useState("")
 const dispatch = useDispatch();
 const history = useNavigate();
-const apiKey = process.env.REACT_APP_API_KEY;
+
+const apiKey = "4YV-X_kIDC3sZv-8HnuSpytd9TG-b8jh4wRCVguGvrA";
 
 const fetchRequest = async () => {
   try {

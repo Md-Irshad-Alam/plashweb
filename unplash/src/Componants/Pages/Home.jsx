@@ -19,8 +19,8 @@ function Home() {
     const fetchedData = useSelector((state) => state.fetchedData);
     const history = useNavigate();
     
-    const apiKey = process.env.REACT_APP_API_KEY;
-   
+    const apiKey = "4YV-X_kIDC3sZv-8HnuSpytd9TG-b8jh4wRCVguGvrA";
+  
 //  make an api request 
         const getdata = async()=>{
           try {
@@ -30,7 +30,7 @@ function Home() {
               `https://api.unsplash.com/search/photos?query=${img}&client_id=${apiKey}`
             );
             const data = await response.json();
-            console.log(data)
+           
             const result = data.results;
           store.dispatch(setFetchedData([...store.getState().fetchedData, ...result]));
           } catch (error) {
@@ -91,10 +91,10 @@ function Home() {
         />
         <TbScanEye fontSize={"1.5rem"}/>
      </div>
+      </div>
       <div className='footer'>
         <p>Photo by Jeremy Bishop</p>
         <p>Read more about the Unsplash License</p>
-      </div>
       </div>
     </div>
     <div className='scroll-img'>
