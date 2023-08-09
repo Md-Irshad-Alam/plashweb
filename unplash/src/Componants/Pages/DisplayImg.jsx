@@ -1,10 +1,10 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import "../Styles/display.css"
-function DisplayImg() {
+function DisplayImg({load}) {
     const fetchedData = useSelector((state) => state.fetchedData);
-    
     console.log(fetchedData)
+    
   return (
    
         <div className="display-img">

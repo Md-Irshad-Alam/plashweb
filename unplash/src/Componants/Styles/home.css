@@ -1,12 +1,11 @@
 .home{
     margin-top: -117px;
     height:600px;
-    width: 100vw;
     background-image: url('./background.jpg'); /* Replace with your image path */
     background-size: cover;
      background-position: center;
     margin-bottom: 10px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 .innercont{
     position: relative;
@@ -16,6 +15,7 @@
     margin: auto;
     text-align: start;
     color: white;
+   
     
 }
 .second-search{
@@ -46,7 +46,8 @@
     justify-content: space-between;
     position: relative;
     bottom: -12%;
-    top: 61%;
+    top: 55%;
+    left: 17px;
     color: #a4a4a4;
     padding-left: 10px;
 }
@@ -58,9 +59,11 @@
     gap: 10px;
     margin: auto;
     
+    
 }
 #result_img{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
 }
 @media screen and  (max-width:620px) {
     .scroll-img{

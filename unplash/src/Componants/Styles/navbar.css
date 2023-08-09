@@ -7,3 +7,14 @@
 background-clip: text;
 -webkit-background-clip: text;
 }
+.second_searchbox2 {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    background-color: #eee;
+    border-radius: 15px;
+    color: black;
+    justify-content: center;
+    padding: 2px 12px 2px 12px;
+}

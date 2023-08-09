@@ -11,7 +11,20 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'FETCHED_DATA':
-      return { ...state, fetchedData: action.payload };
+      return {
+         ...state, 
+         fetchedData: action.payload
+      };
+    case 'LOAD_MORE':
+      return {
+        ...state,
+        fetchedData: action.payload
+      };
+    case 'RESET_DATA':
+      return {
+        ...state,
+        fetchedData: initialState.fetchedData
+      };
     default:
       return state;
   }

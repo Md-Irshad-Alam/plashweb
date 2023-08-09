@@ -13,7 +13,7 @@ root.render(
   <React.StrictMode>
    <Provider  store={store}>
    <BrowserRouter>
-    <MantineProvider>
+    <MantineProvider  theme={{ loader: 'bars' }}>
       <App />
     </MantineProvider>
     </BrowserRouter>
