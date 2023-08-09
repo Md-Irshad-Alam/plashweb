@@ -4,6 +4,9 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin: auto;
+    position: relative;
+    top: -75px;
+
 }
 #result_img{
     height: 18rem;
@@ -13,4 +16,21 @@
 }
 .img-cont{
 
+}
+
+@media screen and  (max-width:620px) {
+    #result_img{
+        height: 10rem;
+        width: 12rem;
+        object-fit: cover;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    .display-img{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 95vw;
+        margin: auto;
+        
+       
+    }
 }

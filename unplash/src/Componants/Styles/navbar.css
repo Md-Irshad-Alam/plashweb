@@ -1,0 +1,9 @@
+.logoname{
+    font-size: 1rem;
+    font-weight: 400;
+    color: chocolate;
+}
+.logocont{
+background-clip: text;
+-webkit-background-clip: text;
+}

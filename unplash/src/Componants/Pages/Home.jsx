@@ -9,9 +9,9 @@ import DisplayImg from './DisplayImg';
 import { useNavigate } from 'react-router-dom';
 import store from '../Redux/Store';
 function Home() {
-    let [img, setImg] = useState("");
-    const Access_Key =  process.Uplash_key
-    console.log(Access_Key)
+    let [img, setImg] = useState("nature");
+    // const Access_Key =  process.Uplash_key
+    // console.log(Access_Key)
     const dispatch = useDispatch();
     const [page, setPage] = useState(1);
     const [hasMore, setHasMore] = useState(true);
@@ -19,60 +19,33 @@ function Home() {
     const fetchedData = useSelector((state) => state.fetchedData);
     const history = useNavigate();
     
+    const apiKey = process.env.REACT_APP_API_KEY;
    
-    const fetchRequest = async () => {
-        try {
-            const response = await fetch(
-              `https://api.pexels.com/v1/curated?per_page=10&page=${page}`,
-              {
-                headers: {
-                  Authorization: process.Uplash_key
-                },
-              }
-            );
-            const data = await response.json();
-            const result = data.photos;
-            store.dispatch(setFetchedData([...store.getState().fetchedData, ...result]));
-           
-      } catch (error) {
-        console.log("error to fetch ")
-        
-      }
-      };
-
- 
-      const Submit = () => {
-       if(img===''){
-        window.alert("Sorry unable find ")
-       }else{
-        fetchRequest();
-        setImg("");
-        history("/display")
-       }
-      };
-
+//  make an api request 
         const getdata = async()=>{
           try {
+            console.log(img)
+           
             const response = await fetch(
-              `https://api.pexels.com/v1/curated?per_page=10&page=${page}`,
-              {
-                headers: {
-                  Authorization: 'eoq3e8CMOSCOxOmqzRMQFNOyTwHuZtnZquLQnlhjfOttfc7SzFwbhd3D',
-                },
-              }
+              `https://api.unsplash.com/search/photos?query=${img}&client_id=${apiKey}`
             );
             const data = await response.json();
-            const result = data.photos
-          //  setData(result)
+            console.log(data)
+            const result = data.results;
           store.dispatch(setFetchedData([...store.getState().fetchedData, ...result]));
-
           } catch (error) {
             console.log(error)
           }
          
 
         }
-
+        // for the onclick handle function 
+        const Submit = () => {
+           getdata();
+           console.log("api is called ")
+          
+         }
+// scrool effect function 
       const handleScroll = async() => {
         const scrollTop = document.documentElement.scrollTop
           const scrollHeight = document.documentElement.scrollHeight
@@ -89,26 +62,18 @@ function Home() {
       };
 
   
-
-// this is for manual type serch 
-      // useEffect(() => {
-      //   fetchRequest();
-        
-      // }, []);
-// this is for infinite scroll useEffect i used dependenc
       useEffect(()=>{
         getdata()
+
       },[page])
 
       useEffect(() => {
         window.addEventListener('scroll', handleScroll);
+        // event cleaner 
         return () => {
           window.removeEventListener('scroll', handleScroll);
         };
       }, []); 
-console.log(fetchedData)
-    
-
   return (
     <>
     <div className='home'>
@@ -126,6 +91,10 @@ console.log(fetchedData)
         />
         <TbScanEye fontSize={"1.5rem"}/>
      </div>
+      <div className='footer'>
+        <p>Photo by Jeremy Bishop</p>
+        <p>Read more about the Unsplash License</p>
+      </div>
       </div>
     </div>
     <div className='scroll-img'>
@@ -133,7 +102,7 @@ console.log(fetchedData)
             fetchedData.map((item, id)=>{
                 return(
                     <div key={id}>
-                       <img src={item.src.small} alt="" id='result_img' />
+                       <img src={item.urls.small} alt="" id='result_img' />
                     </div> 
                 )
             })

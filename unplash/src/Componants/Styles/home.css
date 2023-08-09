@@ -6,6 +6,7 @@
     background-size: cover;
      background-position: center;
     margin-bottom: 10px;
+    overflow-y: scroll;
 }
 .innercont{
     position: relative;
@@ -39,7 +40,16 @@
     
 
 }
-
+.footer{
+    display: flex;
+    width: 62vw;
+    justify-content: space-between;
+    position: relative;
+    bottom: -12%;
+    top: 61%;
+    color: #a4a4a4;
+    padding-left: 10px;
+}
 /* footer  */
 .scroll-img{
     width: 90vw;
@@ -48,8 +58,42 @@
     gap: 10px;
     margin: auto;
     
-
 }
 #result_img{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+@media screen and  (max-width:620px) {
+    .scroll-img{
+        width: 90vw;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 7px;
+        margin: auto;
+    }
+    #result_img{
+        width:"" ;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    .innercont{
+        position: relative;
+        top: 22%;
+        bottom: 50%;
+        width: 94vw;
+        
+    }
+    .home{
+        margin-top: -117px;
+        height:300px;
+        width: 100vw;
+        background-image: url('./background.jpg'); /* Replace with your image path */
+        background-size: cover;
+         background-position: center;
+        margin-bottom: 10px;
+    }
+    .second_searchbox{
+        display: none;
+    }
+    .footer{
+        display: none;
+    }
 }
