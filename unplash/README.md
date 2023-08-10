@@ -6,11 +6,16 @@ This React app showcases infinite scrolling and manual image searching using the
 
 - Infinite scrolling for seamless image loading.
 - Manual search for images using keywords.
+- deployed link : https://unplash-md-irshad-alam.vercel.app/
 
+##Rect and redux version
+-React 18.2.0
+-Redux 4.2.1
 ## Tech Stack
 
 - React for UI components.
 - Fetch API for Unsplash API requests.
+- Redux for state management
 
 ## Getting Started
 
