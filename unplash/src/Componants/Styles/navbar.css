@@ -7,7 +7,16 @@
 background-clip: text;
 -webkit-background-clip: text;
 }
+.search{
+    width:50vw;
+    padding:10px;
+    border-Radius:15px;
+    border:none;
+    outline:none;
+    background-Color:#eee;
+}
 .second_searchbox2 {
+    /* width: vw; */
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -17,4 +26,12 @@ background-clip: text;
     color: black;
     justify-content: center;
     padding: 2px 12px 2px 12px;
+}
+@media screen and (max-width: 620px) {
+    .second_searchbox2{
+        /* width: 35vw; */
+    }
+    .search{
+        width: 30vw;
+    }
 }

@@ -17,19 +17,17 @@ const useStyles = createStyles((theme) => ({
   header: {
     paddingLeft: theme.spacing.md,
     paddingRight: theme.spacing.md,
+    display:"flex",
+    justifyContent:"space-around"
   },
 
   inner: {
-   
+   width:"100vw",
     height: rem(56),
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    position:"fixed",
-    top:"0",
-    left: "0",
-    right: "0",
-    zIndex:"99",
+    
     backgroundColor:"white",
     margin:"auto",
     paddingLeft:"10px",
@@ -47,18 +45,6 @@ const useStyles = createStyles((theme) => ({
     // columnGap:"48px",
   },
 
-  search: {
-    [theme.fn.smallerThan('xs')]: {
-    //   display: 'block',
-      
-    },
-    width:"35vw",
-    padding:"10px",
-    borderRadius:"15px",
-    border:"none",
-    outline:"none",
-    backgroundColor:"#eee"
-  },
   searchbox:{
     [theme.fn.smallerThan('xs')]: {
         display: 'block',
@@ -179,7 +165,7 @@ return () => {
          <Group className="second_searchbox2">
          <FaMagnifyingGlass fontSize={"1.5rem"}/>
          <input type="text"
-          className={classes.search}
+          className="search"
           width="100%"
           onKeyPress={(event) => event.key === 'Enter' ? Submit() : null}
           onChange={(e) => setImg(e.target.value)}
